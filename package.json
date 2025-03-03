@@ -1,5 +1,5 @@
 {
-  "name": "next13-fundamentals",
+  "name": "next15-fundamentals",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
   "dependencies": {
     "eslint-plugin-prettier": "^5.2.3",
     "next": "15.2.0",
-    "next13-fundamentals": "file:",
+    "next15-fundamentals": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
