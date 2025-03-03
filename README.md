@@ -4,7 +4,7 @@ Repositório de estudo Next v15.
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-estudo">Estudo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-estudo">Estudo</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 <p align="center">
