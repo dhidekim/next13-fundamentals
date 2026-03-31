@@ -1,40 +1,107 @@
-<p align="center">
-Repositório de estudo Next v15.
-</p>
+# next15-fundamentals
 
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-estudo">Estudo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
+Projeto de estudo com Next.js App Router focado em fundamentos de renderizacao no servidor, roteamento e boundaries entre Server e Client Components.
 
-<p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=0F172A&labelColor=1D4ED8">
-</p>
+## Visao geral
 
-<br>
+Este repositorio demonstra:
 
-## 🚀 Tecnologias
+- Nested layouts com App Router
+- Route groups (ex.: `(auth)`)
+- Rotas dinamicas e catch-all (ex.: `[...data]`)
+- `loading.tsx` por segmento de rota
+- Uso de `Suspense` para streaming parcial
+- Server Components com `fetch`
+- Client Components com estado local e interacao
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+## Tecnologias
 
-- HTML
-- React
-- Next.js
-- Typescript
+- Next.js 15
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- ESLint + Prettier
 
-## Estudo
+## Pre-requisitos
 
-Teste para compreender melhor os conceitos de:
+- Node.js 20+
+- Yarn (ha `yarn.lock` no projeto)
 
-- Rotas e layouts
-- Grupos e rotas dinâmicas
-- React Server Components
-  - Server Components => A gente não USA JavaScript no lado do cliente
-  - Client Components => O JavaScript é enviado ao navegador (cliente)
-- Fetch de dados nos componentes
-- Loading e Streaming SSR
-  - Streaming SSR => Ler/escrever dados de forma parcial + Server-side Rendering
-  - Renderizar um componente pelo lado do servidor de forma PARCIAL
-- Client Boundaries e Encadeamento
-  - use client e a importância do children
-- Suspense API no React
+## Como executar
+
+1. Instale as dependencias:
+
+```bash
+yarn
+```
+
+2. Rode em desenvolvimento:
+
+```bash
+yarn dev
+```
+
+3. Abra no navegador:
+
+```text
+http://localhost:3000
+```
+
+## Scripts disponiveis
+
+- `yarn dev`: inicia ambiente de desenvolvimento
+- `yarn build`: gera build de producao
+- `yarn start`: sobe aplicacao em modo producao
+- `yarn lint`: executa lint
+
+## Estrutura principal
+
+```text
+src/
+  app/
+    layout.tsx
+    page.tsx
+    loading.tsx
+    (auth)/
+      layout.tsx
+      sign-in/page.tsx
+      sign-up/page.tsx
+    admin/
+      layout.tsx
+      page.tsx
+      login/page.tsx
+    catalog/
+      loading.tsx
+      page.tsx
+      product/
+        page.tsx
+        [...data]/
+          page.tsx
+          add-to-cart-button.tsx
+          test.tsx
+  components/
+    github-profile.tsx
+    long-wait-component.tsx
+```
+
+## Rotas de exemplo
+
+- `/`: home com `Suspense` e componentes assincronos
+- `/sign-in` e `/sign-up`: paginas dentro do grupo `(auth)`
+- `/admin` e `/admin/login`: area administrativa com layout proprio
+- `/catalog`: pagina de catalogo com loading dedicado
+- `/catalog/product`: pagina de produto
+- `/catalog/product/123/P/M`: rota catch-all em `[...data]`
+
+## Conceitos praticados
+
+- **Streaming com Suspense**: a home rende partes da UI conforme dados/componentes ficam prontos
+- **Segment loading**: `app/loading.tsx` e `app/catalog/loading.tsx` exibem fallback por rota
+- **Server x Client Boundary**:
+  - `AddToCartButton` usa `'use client'` e estado (`useState`)
+  - Paginas e componentes assincronos usam renderizacao no servidor
+- **Route Group**: `(auth)` organiza rotas sem afetar URL final
+
+## Licenca
+
+Uso educacional para estudo de Next.js.
