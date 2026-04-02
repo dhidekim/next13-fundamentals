@@ -1,6 +1,6 @@
 # next15-fundamentals
 
-Projeto de estudo com Next.js App Router focado em fundamentos de renderizacao no servidor, roteamento e boundaries entre Server e Client Components.
+Projeto de estudo com Next.js App Router focado em fundamentos de renderização no servidor, roteamento e boundaries entre Server e Client Components.
 
 ## Visao geral
 
